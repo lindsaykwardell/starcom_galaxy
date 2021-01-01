@@ -1,19 +1,19 @@
-<h1>Log in</h1>
+<h1 class="text-center text-3xl pb-4">Log in</h1>
 
-<%= form_with(scope: :session, url: login_path, local: true) do |form| %>
+<%= form_with(scope: :session, class: "w-80 m-auto", url: login_path, local: true) do |form| %>
 
-<div class="field">
-  <%= form.label :email %>
-  <%= form.text_field :email %>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :email, class: "col-span-2" %>
+  <%= form.text_field :email, class: "col-span-4 p-1 shadow bg-gray-800" %>
 </div>
 
-<div class="field">
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :password, class: "col-span-2" %>
+  <%= form.password_field :password, class: "col-span-4 p-1 shadow bg-gray-800" %>
 </div>
 
-<div class="actions">
-  <%= form.submit "Log in" %>
+<div class="flex justify-center">
+  <%= form.submit "Log in", class: "bg-yellow-600 hover:bg-yellow-700 px-6 py-2 mt-4 text-lg rounded shadow hover:shadow-lg transition duration-50 cursor-pointer" %>
 </div>
 
 <% end %>

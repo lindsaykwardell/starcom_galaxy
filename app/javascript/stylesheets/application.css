@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-800 text-white;
+}
+
+a {
+  @apply underline;
+}
+
+.container {
+  @apply m-auto mt-12 bg-gray-700;
+  max-width: 1400px;
+  min-height: calc(100vh - 6rem);
+}
