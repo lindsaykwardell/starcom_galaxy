@@ -1,0 +1,55 @@
+<%= form_with(model: empire) do |form| %>
+<% if empire.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(empire.errors.count, "error") %> prohibited this empire from being saved:</h2>
+
+  <ul>
+    <% empire.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= form.label :empire_name %>
+  <%= form.text_field :empire_name %>
+</div>
+
+<div class="field">
+  <%= form.label :description %>
+  <%= form.text_area :description %>
+</div>
+
+<%
+=begin%>
+<div class="field">
+  <%= form.label :credits %>
+  <%= form.number_field :credits %>
+</div>
+
+<div class="field">
+  <%= form.label :industry %>
+  <%= form.number_field :industry %>
+</div>
+
+<div class="field">
+  <%= form.label :research %>
+  <%= form.number_field :research %>
+</div>
+<%
+=end%>
+
+<%
+=begin%>
+<div class="field">
+  <%= form.label :user_id %>
+  <%= form.text_field :user_id %>
+</div>
+<%
+=end%>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>
