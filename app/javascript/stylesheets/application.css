@@ -10,6 +10,10 @@ a {
   @apply underline;
 }
 
+input {
+  @apply bg-gray-800;
+}
+
 .container {
   @apply m-auto mt-12 bg-gray-700;
   max-width: 1400px;

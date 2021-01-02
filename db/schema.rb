@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_01_165215) do
+ActiveRecord::Schema.define(version: 2021_01_02_003416) do
 
   create_table "empires", force: :cascade do |t|
     t.string "empire_name"
@@ -22,6 +22,23 @@ ActiveRecord::Schema.define(version: 2021_01_01_165215) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_empires_on_user_id"
+  end
+
+  create_table "systems", force: :cascade do |t|
+    t.string "location"
+    t.string "name"
+    t.text "description"
+    t.integer "credits_base"
+    t.integer "industry_base"
+    t.integer "research_base"
+    t.integer "credits_production", default: 0
+    t.integer "industry_production", default: 0
+    t.integer "research_production", default: 0
+    t.integer "empire_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["empire_id"], name: "index_systems_on_empire_id"
+    t.index ["location"], name: "index_systems_on_location", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,4 +53,5 @@ ActiveRecord::Schema.define(version: 2021_01_01_165215) do
   end
 
   add_foreign_key "empires", "users"
+  add_foreign_key "systems", "empires"
 end

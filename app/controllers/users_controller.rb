@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :update, :destroy]
   before_action :set_empire, only: [:show, :update]
 
   # GET /users
@@ -20,6 +20,11 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if logged_in?
+      @user = current_user
+    else
+      redirect_to root_path
+    end
   end
 
   # POST /users
