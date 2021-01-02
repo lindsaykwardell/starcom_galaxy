@@ -12,8 +12,9 @@
   <%= form.password_field :password, class: "col-span-4 p-1 shadow" %>
 </div>
 
-<div class="flex justify-center">
-  <%= form.submit "Log in", class: "bg-yellow-600 hover:bg-yellow-700 px-6 py-2 mt-4 text-lg rounded shadow hover:shadow-lg transition duration-50 cursor-pointer" %>
+<div class="flex justify-around">
+  <%= link_to "Register", new_user_path, class: "bg-gray-600 hover:bg-yellow-700 px-6 py-2 mt-4 text-lg rounded shadow hover:shadow-lg transition duration-50 cursor-pointer" %>
+  <%= form.submit "Log in", class: "bg-yellow-700 hover:bg-yellow-800 px-6 py-2 mt-4 text-lg rounded shadow hover:shadow-lg transition duration-50 cursor-pointer" %>
 </div>
 
 <% end %>

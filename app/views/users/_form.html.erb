@@ -1,42 +1,42 @@
-<%= form_with(model: user) do |form| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_with(model: user, url: url) do |form| %>
+<% if user.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-        <% user.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% user.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :username, class: "col-span-2" %>
+  <%= form.text_field :username, class: "col-span-4 p-1 shadow" %>
+</div>
 
-  <div class="field">
-    <%= form.label :display_name %>
-    <%= form.text_field :display_name %>
-  </div>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :display_name, class: "col-span-2" %>
+  <%= form.text_field :display_name, class: "col-span-4 p-1 shadow" %>
+</div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :email, class: "col-span-2" %>
+  <%= form.text_field :email, class: "col-span-4 p-1 shadow" %>
+</div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :password, class: "col-span-2" %>
+  <%= form.password_field :password, class: "col-span-4 p-1 shadow" %>
+</div>
 
-  <div class="field">
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation %>
-  </div>
+<div class="grid grid-cols-6 py-2">
+  <%= form.label :password_confirmation, class: "col-span-2" %>
+  <%= form.password_field :password_confirmation, class: "col-span-4 p-1 shadow" %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="flex justify-center">
+  <%= form.submit "Register", class: "bg-yellow-700 hover:bg-yellow-800 px-6 py-2 mt-4 text-lg rounded shadow hover:shadow-lg transition duration-50 cursor-pointer" %>
+</div>
 <% end %>

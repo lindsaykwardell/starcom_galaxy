@@ -10,7 +10,7 @@ a {
   @apply underline;
 }
 
-input {
+input, textarea {
   @apply bg-gray-800;
 }
 

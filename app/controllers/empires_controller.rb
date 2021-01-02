@@ -33,7 +33,7 @@ class EmpiresController < ApplicationController
 
     respond_to do |format|
       if @empire.save
-        format.html { redirect_to @empire, notice: 'Empire was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Empire was successfully created.' }
         format.json { render :show, status: :created, location: @empire }
       else
         format.html { render :new }
@@ -47,7 +47,7 @@ class EmpiresController < ApplicationController
   def update
     respond_to do |format|
       if @empire.update(empire_params)
-        format.html { redirect_to @empire, notice: 'Empire was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Empire was successfully updated.' }
         format.json { render :show, status: :ok, location: @empire }
       else
         format.html { render :edit }

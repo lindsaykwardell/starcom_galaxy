@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users
   get "/users/:id", to: 'users#show'
   get "/profile", to: "users#edit"
+  get "/register", to: "users#new"
+  post "/register", to: "users#create"
   resources :empires
   resources :systems
   get 'login', to: 'sessions#new'

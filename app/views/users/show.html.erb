@@ -4,7 +4,7 @@
   <%= @user.display_name %>
 </h1>
 
-
+<% if @empire %>
 
 <p>
   <strong>Empire name:</strong>
@@ -32,3 +32,9 @@
 </p>
 
 <%= link_to 'Edit Empire', edit_empire_path(@empire) %>
+
+<% else %>
+
+<%= link_to  "Create Empire", new_empire_path %>
+
+<% end %>
