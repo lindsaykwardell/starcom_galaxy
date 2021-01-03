@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_030330) do
+ActiveRecord::Schema.define(version: 2021_01_02_141217) do
 
   create_table "empires", force: :cascade do |t|
     t.string "empire_name"
@@ -37,7 +37,6 @@ ActiveRecord::Schema.define(version: 2021_01_02_030330) do
     t.integer "empire_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "ship_scout_count"
     t.index ["empire_id"], name: "index_systems_on_empire_id"
     t.index ["location"], name: "index_systems_on_location", unique: true
   end

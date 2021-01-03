@@ -33,6 +33,20 @@ class EmpiresController < ApplicationController
 
     respond_to do |format|
       if @empire.save
+        system = System.new
+        system.location = System.new_location
+        system.name = ""
+        system.description = ""
+        system.credits_base = rand 31
+        system.industry_base = rand 31
+        system.research_base = rand 31
+        system.credits_production = rand 5..11
+        system.industry_production = rand 6
+        system.research_production = rand 6
+        system.empire_id = @empire.id
+
+        system.save
+
         format.html { redirect_to root_path, notice: 'Empire was successfully created.' }
         format.json { render :show, status: :created, location: @empire }
       else

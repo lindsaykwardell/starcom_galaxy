@@ -11,6 +11,11 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    if @empire
+      @systems = System.where({empire_id: @empire.id})
+    else
+      @systems = []
+    end
   end
 
   # GET /users/new

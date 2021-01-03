@@ -1,37 +1,75 @@
 <p id="notice"><%= notice %></p>
 
-<h1 class="text-2xl">
+<h1 class="text-xl pb-3">
   <%= @user.display_name %>
 </h1>
 
 <% if @empire %>
 
-<p>
-  <strong>Empire name:</strong>
-  <%= @empire.empire_name %>
-</p>
+<div class="flex">
+  <h2 class="flex-grow text-2xl pb-3">
+    <%= @empire.empire_name %>
+  </h2>
+  <p class="px-3 border-r border-gray-500">
+    <strong>Credits:</strong>
+    <%= @empire.credits %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
+  <p class="px-3 border-r border-gray-500">
+    <strong>Industry:</strong>
+    <%= @empire.industry %>
+  </p>
+
+  <p class="px-3">
+    <strong>Research:</strong>
+    <%= @empire.research %>
+  </p>
+</div>
+
+<p class="text-lg py-5">
   <%= @empire.description %>
 </p>
 
-<p>
-  <strong>Credits:</strong>
-  <%= @empire.credits %>
-</p>
-
-<p>
-  <strong>Industry:</strong>
-  <%= @empire.industry %>
-</p>
-
-<p>
-  <strong>Research:</strong>
-  <%= @empire.research %>
-</p>
-
 <%= link_to 'Edit Empire', edit_empire_path(@empire) %>
+
+<h3 class="text-2xl">Systems</h3>
+
+<div class="w-2/3 m-auto bg-gray-900 shadow p-6">
+  <table class="w-full">
+    <thead>
+      <tr>
+        <th class="text-left">Location</th>
+        <th class="text-left">Credits Income</th>
+        <th class="text-left">Industry Income</th>
+        <th class="text-left">Research Income</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @systems.each do |system| %>
+      <tr>
+        <td><%= system.location %></td>
+        <td>
+          <%= link_to '+', improve_system_path, class: "p-1 bg-green-500 hover:bg-green-700 transition duration-50 rounded-full h-8 w-8" %>
+          <%= system.credits_production %>/<%= system.credits_base %>
+        </td>
+        <td>
+
+          <%= link_to '+', improve_system_path, class: "p-1 bg-green-500 hover:bg-green-700 transition duration-50 rounded-full h-8 w-8" %>
+          <%= system.industry_production %>/<%= system.industry_base %>
+        </td>
+        <td>
+
+          <%= link_to '+', improve_system_path, class: "p-1 bg-green-500 hover:bg-green-700 transition duration-50 rounded-full h-8 w-8" %>
+          <%= system.research_production %>/<%= system.research_base %>
+        </td>
+        <td><%= link_to 'Show', system %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <% else %>
 
