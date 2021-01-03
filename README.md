@@ -53,6 +53,14 @@ Planets have a max improvement level (5-20), and each resource has a max level. 
 |Industry Income    |50c/10r    |L^3            |Increase industry income by L per station/planet |
 |Research Income    |100c/20r   |L^4            |Increase research income by L per station/planet |    
 
+Example costs for evasion upgrades:
+
+L1: 60c/12r
+L2: 100c/20r
+L3: 195c/39r
+L4: 380c/76r
+L5: 685c/137r
+
 TRAVEL:
 
 Ships travel between systems at a speed equal to difference in letters * 10. Example:
@@ -74,7 +82,7 @@ Systems:
 
 Each system may have between 0 and 5 useful planets. Systems can be divided between players, but a planet can only be controlled by one player.
 
-Sytems support between 1-30 stations. Any type of station can be built to fill these slots.
+Systems support between 1-30 stations. Any type of station can be built to fill these slots.
 
 Any player can attempt to construct stations in a system. It is up to the players in that system to prevent incursions from hostile forces.
 
