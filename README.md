@@ -55,11 +55,11 @@ Planets have a max improvement level (5-20), and each resource has a max level. 
 
 Example costs for evasion upgrades:
 
-L1: 60c/12r
-L2: 100c/20r
-L3: 195c/39r
-L4: 380c/76r
-L5: 685c/137r
+- L1: 60c/12r
+- L2: 100c/20r
+- L3: 195c/39r
+- L4: 380c/76r
+- L5: 685c/137r
 
 TRAVEL:
 
