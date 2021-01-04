@@ -5,11 +5,12 @@
 |Type                         |Time               |
 |-----------------------------|-------------------|
 |Earn credits                 |30 min             |
-|Earn indudstry               |1 hour             |
+|Earn industry                |1 hour             |
 |Earn research                |4 hours            |
 |Repair ships/stations        |1 DEF per 30 min   |
 |Ship/station build speed     |1 DEF per 30 min   |
 |Travel time                  |10 min per distance| 
+|Combat                       |30 min             |
 
 ## Ships/Stations
 
@@ -61,24 +62,26 @@ Example costs for evasion upgrades:
 - L4: 380c/76r
 - L5: 685c/137r
 
-TRAVEL:
+## TRAVEL
 
 Ships travel between systems at a speed equal to difference in letters * 10. Example:
 
-AAAA -> AAAB = 10 minutes travel time.
-
-ABCD -> BCDF = 40 minutes travel time.
+### Example travel times
+- AAAA -> AAAB = 10 minutes travel time.
+- ABCD -> BCDF = 40 minutes travel time.
 
 Travel speed research reduces the total by its value. Travel speed cannot be less than 10 minutes.
 
-Travel speed tech: level 2
-ABCD -> BCDF = 20 minutes travel time.
+### Travel speed tech: level 2
+- ABCD -> BCDF = 20 minutes travel time.
 
-Exploration:
+# Exploration
 
 Scouts are sent on exploration missions in order to discover more systems. Exploration takes 24 hours. There is a 20% chance that a scout ship will be destroyed while exploring. Each scout ship may discover between 1-3 systems. Other ships can only travel to known systems.
 
-Systems:
+If a scout discovers a system controlled by another player, each player will be informed and can begin communications.
+
+# Systems
 
 Each system may have between 0 and 5 useful planets. Systems can be divided between players, but a planet can only be controlled by one player.
 
@@ -86,10 +89,32 @@ Systems support between 1-30 stations. Any type of station can be built to fill 
 
 Any player can attempt to construct stations in a system. It is up to the players in that system to prevent incursions from hostile forces.
 
-Colonization:
+# Colonization
 
 Colonization costs 1000 credits/600 industry. By default, a new planet creates 1 credit, 0 industry, and 0 research.
 
-Combat:
+# Combat
 
-Combat is slow. Do not expect quick results. Each ship has a combat speed. This is how often it fires in real time.
+*NOTE: Space is, as they say, BIG. Combat is slow. Do not expect quick results.*
+
+Combat occurs when a player decides to attack another player in a system. Combat does not happen automatically. Unless the opposing player or players are expecting an attack (ships/stations can be put in defensive mode, but increases upkeep costs), the attacking player gets an attack of opportunity (AOO). Any number of players can choose to be involved if they have ships or stations in a system where combat is taking place.
+
+Every 30 minutes, ships in combat are randomized and fire at each other. Ships can be assigned roles that prefer to target certain ship types.
+
+- Target small ships
+- Target medium ships
+- Target large ships
+- Target stations
+
+Ships have a fire rate (FRE). This is the number of times they can attempt to fire their weapons. Each attack, a hit number is checked (0-50). If the evasion (EVA) of the target is greater than or equal to the random number, the attack misses. If it hits, damage is done to the target equal to the ATK of the attacking ship or the difference between EVA and the hit number, whichever is smaller. For example:
+
+- Battleship attacks Corvette
+- Battleship makes four hit checks. They are - 7, 13, 3, and 25.
+- Three of the four attacks miss Corvette.
+- Hit roll is 25. Corvette has EVA of 15, so the attack hits.
+- Battleship's ATK is 25, but the difference between EVA and HIT is 10.
+- Corvette takes 10 damage to DEF.
+
+Between attack rolls, any players involved in combat may choose to retreat. Opposing ships will take an AOO before ships successfully retreat.
+
+Combat continues until all opposing ships are destroyed or retreat.
