@@ -7,32 +7,12 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
 
-  <%
-=begin%>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%
-=end%>
   <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-  <div class="container">
-    <div class="flex p-4">
-      <div class="flex-grow flex">
-        <% if logged_in? %>
-        <%= link_to "Home", root_path %>
-        <% end %>
-      </div>
-      <% if logged_in? %>
-      Signed in as <%= current_user[:display_name] %>. [<%= link_to 'Edit', profile_path %>] [<%= link_to 'Logout', logout_path, method: :delete %>]
-      <% else %>
-      [<%= link_to "Login", login_path %>]
-      <% end %>
-    </div>
-    <div class="p-4">
-      <%= yield %>
-    </div>
-  </div>
+  <%= yield %>
 </body>
 
 </html>
